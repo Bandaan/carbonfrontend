@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Test Page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offset Carbon Emissions</title>
+  <link rel="stylesheet" href="assets/responsive-full-background-image.css"> <!-- Link to your CSS file -->
 </head>
+
 <body>
+<header>
+  <a href="#" class="logo">Fairpay.<span class="animate" style="--i:1;"></span></a>
+  <nav class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+    <span class="animate" style="--i:2;"></span>
+  </nav>
+</header>
 
-<h1>API Test Page</h1>
+<section class="home">
+  <span class="animate bg"></span>
+  <div class="home-content">
+    <h1>Steps towards a future<span class="animate" style="--i:3;"></span></h1>
+    <h1>By circular<span class="animate" style="--i:4;"></span></h1>
+    <h1>Sustainability<span class="animate" style="--i:5;"></span></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.<span class="animate" style="--i:6;"></span></p>
 
-<form id="apiTestForm">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id" required>
-    <br>
+    <div class="btn-box">
+      <a href="#" class="btn">Get started</a>
+      <a href="#" class="btn">Learn more</a>
+      <span class="animate" style="--i:7;"></span>
+    </div>
 
-    <label for="weight">Weight:</label>
-    <input type="number" id="weight" name="weight" step="0.01" required>
-    <br>
 
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" step="0.01" required>
-    <br>
+  </div>
 
-    <label for="type">Type:</label>
-    <select id="type" name="type" required>
-        <option value="true">True</option>
-        <option value="false">False</option>
-    </select>
-    <br>
+</section>
+<section id="about">About</section>
+<section id="services">Services</section>
+<section id="portfolio">Portfolio</section>
+<section id="contact">Contact</section>
 
-    <button type="button" onclick="sendRequest()">Send Request</button>
-</form>
+<script src="script.js"></script>
 
-<div id="result"></div>
-
-<script>
-    function sendRequest() {
-        var formData = {
-            id: document.getElementById('id').value,
-            weight: parseFloat(document.getElementById('weight').value),
-            price: parseFloat(document.getElementById('price').value),
-            type: document.getElementById('type').value === 'true'
-        };
-
-        fetch('https://carbon-offset-production.up.railway.app/offset', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-            })
-            .catch(error => {
-                document.getElementById('result').innerHTML = '<pre>Error: ' + error.message + '</pre>';
-            });
-    }
-</script>
 
 </body>
+
+<!--<header>
+    <h1>Offset Carbon Emissions with [Your Startup Name]</h1>
+    <p>Welcome to [Your Startup Name], where we help individuals and businesses offset their carbon emissions responsibly.</p>
+    <img src="assets/img/background.jpg"
+         srcset="keyboard-400w.jpg 400w,
+            keyboard-800w.jpg 800w"
+         sizes="(max-width: 640px) 400px,
+            800px">
+</header>
+
+
+<section id="About">
+    <h2>About Us</h2>
+    <p>Insert your About Us content here...</p>
+</section>
+
+<section id="Services">
+    <h2>Our Services</h2>
+    <p>Insert information about your services here...</p>
+</section>
+
+<section id="how-it-works">
+    <h2>How It Works</h2>
+    <p>Insert explanation of how your service works here...</p>
+</section>-->
+
 </html>
